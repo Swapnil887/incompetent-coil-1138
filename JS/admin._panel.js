@@ -11,4 +11,4 @@ let obj={
   
 }
     console.log(add_img,add_name,add_price,add_des)
-})
+
