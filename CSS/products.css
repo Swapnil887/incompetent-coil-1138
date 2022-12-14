@@ -1,0 +1,78 @@
+*{
+    font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body{
+    font-family: sans-serif;
+    background-color: #f6f7f7;
+}
+.container{
+    display: flex;
+}
+        /* filter menu start */
+
+    
+
+        /* filter menu end */
+
+
+                /* -----Product Cards-start------ */
+#all_products{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 13px;
+    margin-top: 50px;
+  }
+  #all_products > div{
+    background-color: #fefeff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 8px;
+    padding:  15% 7% 0;
+  }
+  #all_products > div > img{
+    width: 60%; 
+    margin-bottom: 40px;
+    margin-top: 10px;
+  }
+  #all_products > div > h4{
+    font-size: 14px;
+    font-weight:400;
+    font-style:normal;
+    font-variant:normal;
+    text-transform:none;
+    text-decoration:none solid rgb(33, 33, 33);
+    text-align:left;
+    text-indent:0px;
+    color: #434243;
+  }
+  #all_products > div > p{
+    font-size: 12px;
+    color: #8e8f8f;
+    font-weight:400;
+    font-style:normal;
+    font-variant:normal;
+    text-transform:none;
+    text-decoration:none solid rgb(117, 117, 117);
+    text-align:left;
+    text-indent:0px;
+    line-height:17.1429px;
+    vertical-align:baseline;
+    letter-spacing:normal;
+    word-spacing:0px;
+   
+  }
+
+  #all_products > div > h3{
+    color: #212121;
+    line-height:22.8571px;
+    vertical-align:baseline;
+    letter-spacing:normal;
+    word-spacing:0px;
+    font-weight:400;
+    font-style:normal;
+    font-variant:normal;
+    text-transform:none;
+    text-decoration:none solid rgb(33, 33, 33);
+    text-align:left;
+    text-indent:0px;
+  }
+                /* Product Cards end */
