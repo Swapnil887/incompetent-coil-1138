@@ -1,0 +1,118 @@
+.update{
+    display: flex;
+    gap: 4%;
+ width:90%;
+    margin: auto; 
+  
+display: flex;
+}
+.update>div{
+height:80%;
+width:30%;
+display: flex;
+flex-direction: column;
+padding: 2%;
+margin: auto;
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+gap: 20px
+}
+.update>div:nth-child(2)>form input{
+ padding-left: 25px;
+margin-left: 25px;
+}
+form input{
+height:30px;
+border-radius: 5px;
+margin-top:15px;
+width:80%;
+background-color: rgb(255, 255, 255);
+border: 1px solid rgb(225,111,97);
+
+}
+.hadd{
+ font-family: sans-serif;
+ font-size: 17px;
+padding-left: 36px;
+
+}
+.hea{
+ color: black;
+text-align: center;
+ 
+}
+#add{
+ height: 30px;
+ background-color: rgb(225,111,97);
+ color: white;
+margin-bottom: 60px;
+margin-top: 20px;
+}
+#delete{
+ height: 30px;
+ background-color: rgb(225,111,97);
+ color: white;
+ margin-bottom: 70px;
+ margin-left: 36px;
+ margin-top: 20px;
+}
+.nav{
+ margin: 0px;
+ padding: 0px;
+ height: 80px;
+ width:100%;
+ box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+ margin-bottom: 60px;
+}
+.main{
+ display: grid;
+ grid-template-columns: repeat(5,1fr);
+ grid-template-rows: repeat(auto,1fr);
+ width: 90%;
+ margin: auto;
+ gap:4%;
+ margin-top :50px;
+
+
+}
+.main>div{
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+padding: 4%;
+border-radius: 10px;
+}
+.main>div>div{
+
+text-align: center;
+}
+.main>div>img{
+
+border: 1px solid green;
+}
+.main>div>h3{
+color:#122121;
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif;
+}
+.main>div>p{
+ color:#757575;
+font-size: 12px;
+font-family: Arial, Helvetica, sans-serif;
+}
+#mh{
+ color: rgb(225,111,97);
+padding-top: 100px;
+
+text-align: center;
+}
+.mdlt{
+ height: 20px;
+ width: 70px;
+ background-color: rgb(225,111,97);
+ border: 0px;
+margin-bottom:15px ;
+font-size: 12px;
+font-family: Arial, Helvetica, sans-serif;
+border-radius: 7px;
+border: 2px solid rgb(236, 100, 85);
+color: white;
+}
