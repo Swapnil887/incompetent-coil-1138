@@ -72,6 +72,7 @@ function renderCardList(cardData) {
 `;
 }
 
+
 function getAsCard(imageURL, name, description, id,price) {
  
   return `
@@ -93,4 +94,7 @@ function getAsCard(imageURL, name, description, id,price) {
       method:"DELETE"
     });
   }
+
+    //console.log(add_img,add_name,add_price,add_des)
+
 
