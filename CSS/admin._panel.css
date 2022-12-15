@@ -82,12 +82,16 @@ padding: 4%;
 border-radius: 10px;
 }
 .main>div>div{
-
+    height: 155px;
+    width: 135px;
+margin-top: 15px;
 text-align: center;
+margin: auto;
 }
-.main>div>img{
+.main>div>div>img{
+height: 90%;
+width: 90%;
 
-border: 1px solid green;
 }
 .main>div>h3{
 color:#122121;
