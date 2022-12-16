@@ -8,11 +8,23 @@ let data = [
     price: 5000,
     description: "great",
   },
+  {
+    image: "http://www.masaischool.com/img/navbar/logo.svg",
+    name: "Rudra1",
+    price: 50001,
+    description: "greatestt",
+  },
+  {
+    image: "http://www.masaischool.com/img/navbar/logo.svg",
+    name: "Rudra1",
+    price: 50001,
+    description: "greatestt",
+  },
 ];
 
 let append = (data) => {
   // cart_medicines.innerHTML=null
-  data.forEach((el, i) => {
+  data.forEach((el, id) => {
     let div = document.createElement("div");
     div.setAttribute("class", "items");
 
@@ -34,6 +46,7 @@ let append = (data) => {
 
     let MRP = document.createElement("p");
     MRP.innerText = "Rs. 1250/-";
+    MRP.style.textDecoration = "line-through";
     div2.append(desc, MRP);
 
     let div3 = document.createElement("div");
@@ -45,15 +58,23 @@ let append = (data) => {
     let div3l1 = document.createElement("div");
     let img1 = document.createElement("img");
     img1.src = "https://img.1mg.com/images/delete_icon.svg";
+    img1.style.cursor = "pointer";
     div3l1.append(img1);
+    img1.addEventListener("click", (event) => {
+      event.target.parentNode.parentNode.parentNode.parentNode.remove();
+      alert(`${el.name} will be removed from list`);
+      remove_med(id);
+    });
 
     let div3l2 = document.createElement("div");
     let p1 = document.createElement("p");
     p1.innerText = "Remove";
+    p1.style.cursor = "pointer";
     div3l2.append(p1);
     p1.addEventListener("click", (event) => {
-      event.target.parentNode.remove();
-      remove_med(i);
+      event.target.parentNode.parentNode.parentNode.parentNode.remove();
+      alert(`${el.name} will be removed from list`);
+      remove_med(id);
     });
 
     div3l.append(div3l1, div3l2);
@@ -87,6 +108,4 @@ let append = (data) => {
 
 append(data);
 
-let remove_med = (i) => {
-  data.splice(i, 1);
-};
+// let remove_med
