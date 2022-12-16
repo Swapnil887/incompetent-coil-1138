@@ -169,3 +169,34 @@ body {
 #chkout:hover {
   background: #fc6456;
 }
+
+/* appending part */
+
+.div_align {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.items {
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 10px;
+}
+.items:hover {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.remove {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  align-items: center;
+}
+.add {
+  display: flex;
+  justify-content: space-between;
+  border: #1aab2a;
+  width: 100px;
+  align-items: center;
+}
