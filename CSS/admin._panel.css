@@ -28,7 +28,7 @@ border-radius: 5px;
 margin-top:15px;
 width:80%;
 background-color: rgb(255, 255, 255);
-border: 1px solid rgb(225,111,97);
+border: 1px solid #ff6f61;
 
 }
 .hadd{
@@ -44,27 +44,20 @@ text-align: center;
 }
 #add{
  height: 30px;
- background-color: rgb(225,111,97);
+ background-color: #ff6f61;
  color: white;
 margin-bottom: 60px;
 margin-top: 20px;
 }
 #delete{
  height: 30px;
- background-color: rgb(225,111,97);
+ background-color: #ff6f61;
  color: white;
  margin-bottom: 70px;
  margin-left: 36px;
  margin-top: 20px;
 }
-.nav{
- margin: 0px;
- padding: 0px;
- height: 80px;
- width:100%;
- box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
- margin-bottom: 60px;
-}
+
 .main{
  display: grid;
  grid-template-columns: repeat(5,1fr);
@@ -82,12 +75,16 @@ padding: 4%;
 border-radius: 10px;
 }
 .main>div>div{
-
+    height: 155px;
+    width: 135px;
+margin-top: 15px;
 text-align: center;
+margin: auto;
 }
-.main>div>img{
+.main>div>div>img{
+height: 90%;
+width: 90%;
 
-border: 1px solid green;
 }
 .main>div>h3{
 color:#122121;
@@ -100,20 +97,77 @@ font-size: 12px;
 font-family: Arial, Helvetica, sans-serif;
 }
 #mh{
- color: rgb(225,111,97);
-padding-top: 100px;
+ color: #ff6f61;
+padding-bottom: 50px;
 
 text-align: center;
 }
 .mdlt{
  height: 20px;
  width: 70px;
- background-color: rgb(225,111,97);
+ background-color: #ff6f61;
  border: 0px;
 margin-bottom:15px ;
 font-size: 12px;
 font-family: Arial, Helvetica, sans-serif;
 border-radius: 7px;
-border: 2px solid rgb(236, 100, 85);
+border: 2px solid  #ff6f61;
 color: white;
+}
+/*-nav-*/
+#navBar{
+    display: flex;
+    /* border: 2px solid blue; */
+    justify-content: space-around;
+    margin: 0%;
+    padding: 0%;
+    height: 70px;
+    margin-bottom: 30px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+#left_section{
+    display: flex;
+    height: 50%;
+   
+    width: 40%;
+    justify-content: space-between;
+    /* margin-top: 5px; */
+    padding-top: 8px;
+}
+
+#left_section>div h3:hover{
+    color: #ff6f61;
+    cursor: pointer;
+}
+#left_section>div>a{
+   text-decoration: none;
+}
+#right_section{
+    display: flex;
+    font-size: medium;
+    height: 20%;
+
+    margin-top: 27px;
+    width: 35%;
+    justify-content: space-around;
+}
+
+#right_section .right:nth-child(3){
+
+  /* margin-top: auto; */
+  margin-top: -6px;
+}
+.image{
+    height: 35px;
+    width:130px;
+    background-color: #ff6f61;
+    color: #f7fafa;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom:13px;
+    border-radius: 5px;
+}
+.image>p{
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
