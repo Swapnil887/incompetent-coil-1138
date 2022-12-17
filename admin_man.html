@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="stylesheet" type="text/css" href="CSS/admin._panel.css" />
+</head>
+
+<body>
+    <div id="navBar">
+        <div class="image"><p>INSTA Pharma<p></div>
+        <div id="left_section">
+            <div class="left">
+                <a href="admin_panel.html"><h3> All Product</h3></a>
+            
+               
+            </div>
+            <div class="left">
+             
+                <a href="admin_man.html"><h3> Mannage Product</h3></a>
+            
+            </div>
+            <div class="left">
+                
+                <a href="admin_dashbord.html"><h3> Dashboard</h3></a>
+            
+            </div>
+            <div class="left">
+              
+                <a href="a.notif.html"><h3>See Stucks</h3></a>
+            
+            </div>
+        </div>
+        <div id="right_section">
+            <div class="right">Add Offers</div>
+            <div class="right">Your Profile</div>
+            <div class="right">Resolve Help?</div>
+        </div>
+    </div>
+    <h1 id="mh">Mannage  All Product</h1>
+    <div class="update">
+        <div class="add_new">
+            <h1 class="hea">ADD PRODUCT</h1>
+            <form id="new_product">
+                <h1 class="hadd">ENTER IMAGE URL</label>
+                <input id="img_url" placeholder="Enter Image url"type="url">
+                <h1 class="hadd">ENTER PRODUCT NAME</label>
+                <input id="name" placeholder="Enter Product Name"type="text">
+                <h1 class="hadd">ENTER PRODUCT PRICE</label>
+                <input id="price" placeholder="Enter Product Price" type="number">
+                <h1 class="hadd">ENTER PRODUCT DESCRIPTION</label>
+                <input id="des" placeholder="Enter Product Description"type="text">
+               
+                <input id="add" value="Add Product" type="submit">
+            </form>
+        </div>
+        <div class="delete">
+            <h1 class="hea">DELETE PRODUCT</h1>
+            <form id="dlt_product">
+                <h1 class="hadd">ENTER  ID</h1>
+                <input id="delete_id" placeholder="Enter Product id" type="number">   
+                <input id="delete" value="Delete Product" type="submit">
+            </form>
+        </div>
+    </div>
+    <h1 id="mh">SEE ALL PRODUCT</h1>
+  <div class="main">         
+      
+    </div>
+</body>
+</html>
+<script >
+    console.log("app start")
+async function getData(){
+    var x = await fetch("https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products");
+    var data = await x.json();
+
+    renderCardList(data);
+    getbtn(data)
+  }
+
+  getData()
+ 
+let add_btn=document.getElementById("new_product")
+add_btn.addEventListener("submit",function(event){
+    event.preventDefault()
+    let add_img=document.querySelector("#img_url").value
+    let add_name=document.querySelector("#name").value
+    let add_price=document.querySelector("#price").value
+    let add_des=document.querySelector("#des").value
+var obj = {
+        name: add_name,
+        description: add_des,
+        avatar: add_img,
+        price: add_price,
+        
+      }
+     
+      addData(obj)
+   //  window.onload
+})
+
+
+
+async function addData(obj){
+    var x = await fetch(`https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products`,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"}
+      ,body:JSON.stringify(obj)
+    })
+  }
+ let main =document.querySelector(".main")
+
+function renderCardList(cardData) {
+    main.innerHTML=`
+
+  
+    ${cardData
+      .map((item) => {
+        let imageURL = `${item.avatar}`;
+        let name = `${item.name}`;
+        let description = `${item.description}`;
+        let id=`${item.id}`;
+        let price=`${item.price}`
+        return getAsCard(imageURL, name, description,id,price );
+      })
+      .join("")}
+
+`;
+}
+
+function getAsCard(imageURL, name, description, id,price) {
+ 
+  return `
+  <div class="show_products">
+  <div> <img src=${imageURL} alt="img"></div>
+  <h3>${name}</h3>
+     <h3>${price}</h3>
+     <p>${description}</p>
+     <h3>PRODUCT ID:${id}</h3>
+     <button class="mdlt" data-id=${id} >Delete</button>
+     </div>
+`;
+}
+
+
+
+  async function delData(id){
+    var x = await fetch(`https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products/${id}`,{
+      method:"DELETE"
+    });
+  }
+
+  let dlt_btn=document.getElementById("delete")
+  dlt_btn.addEventListener("click",function(event){
+      event.preventDefault()
+     
+    let p_id=document.querySelector("#delete_id").value
+    delData(p_id)
+     
+
+       
+  })
+
+  async function bdlt(id){
+    var x = await fetch(`https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products/${id}`,{
+      method:"DELETE"
+    });
+  }
+ 
+
+</script>
