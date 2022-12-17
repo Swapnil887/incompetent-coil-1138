@@ -53,8 +53,8 @@
                 <input id="price" placeholder="Enter Product Price" type="number">
                 <h1 class="hadd">ENTER PRODUCT DESCRIPTION</label>
                 <input id="des" placeholder="Enter Product Description"type="text">
-               
-                <input id="add" value="Add Product" type="submit">
+              
+               <input type="submit" id="add" value="Add Product" >
             </form>
         </div>
         <div class="delete">
@@ -62,7 +62,7 @@
             <form id="dlt_product">
                 <h1 class="hadd">ENTER  ID</h1>
                 <input id="delete_id" placeholder="Enter Product id" type="number">   
-                <input id="delete" value="Delete Product" type="submit">
+                      <input type="submit" id="delete" value="Delete ">
             </form>
         </div>
     </div>
@@ -79,7 +79,7 @@ async function getData(){
     var data = await x.json();
 
     renderCardList(data);
-    getbtn(data)
+ 
   }
 
   getData()
@@ -100,7 +100,8 @@ var obj = {
       }
      
       addData(obj)
-   //  window.onload
+      alert('This Product  Added Successfully ') 
+      window.location.href = "admin_man.html";
 })
 
 
@@ -148,6 +149,7 @@ function getAsCard(imageURL, name, description, id,price) {
 
 
 
+ 
   async function delData(id){
     var x = await fetch(`https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products/${id}`,{
       method:"DELETE"
@@ -160,16 +162,8 @@ function getAsCard(imageURL, name, description, id,price) {
      
     let p_id=document.querySelector("#delete_id").value
     delData(p_id)
-     
-
-       
+      alert('This Product Successfully Deleted ') 
+      window.location.href = "admin_man.html";
   })
-
-  async function bdlt(id){
-    var x = await fetch(`https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products/${id}`,{
-      method:"DELETE"
-    });
-  }
- 
 
 </script>
