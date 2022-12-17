@@ -89,7 +89,6 @@ body {
 }
 #cart_items {
   width: 100%;
-  border: 1px solid green;
   height: auto;
 }
 #cart_total {
