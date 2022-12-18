@@ -187,7 +187,7 @@ let append = (data) => {
   priceDiscount.innerText = `- Rs. ${discount}/-`;
 
   let subTotal = document.getElementById("ttl");
-  subTotal.innerText = `Rs. ${totalMRP - discount}`;
+  subTotal.innerText = `Rs. ${totalMRP - discount}/-`;
 
   let totalSaving = document.getElementById("ttl_dsc");
   totalSaving.innerText = `Rs. ${discount}/-`;
