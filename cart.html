@@ -24,30 +24,17 @@
 
     <!-- here i have written style is for slider -->
     <style>
-      body {
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
-        margin: 0;
-        padding: 0;
-      }
-
       .swiper {
-        border: 1px solid blue;
-        padding: 15px 0px;
         width: 100%;
         height: 300px;
-        margin: 20px auto;
-        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
       }
 
       .swiper-slide {
         text-align: center;
-        font-size: 18px;
+        /* font-size: 38px; */
         background: #fff;
         border: 1px solid green;
+        /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -62,11 +49,11 @@
         align-items: center;
       }
 
-      .swiper-button-next {
-        color: #fc6456;
-      }
-      .swiper-button-prev {
-        color: #fc6456;
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     </style>
     <!-- till here for slider -->
@@ -91,14 +78,27 @@
       <div id="left">
         <div id="cart_items"></div>
         <div id="prdct">
-          <h4>Last Minute Buys</h4>
-
-          <div id="slider">
-            <div class="swiper">
-              <div class="swiper-wrapper"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+          <h2>Last Minute Buys</h2>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+              <div class="swiper-slide">Slide 10</div>
+              <div class="swiper-slide">Slide 11</div>
+              <div class="swiper-slide">Slide 12</div>
+              <div class="swiper-slide">Slide 13</div>
+              <div class="swiper-slide">Slide 14</div>
+              <div class="swiper-slide">Slide 15</div>
             </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
         </div>
       </div>
@@ -127,7 +127,7 @@
             ><span style="color: #489118">Free Delivery 🎉</span>
           </p>
           <p class="p_class">
-            <span>Safety Handling Fee</span><span>Rs. 29/-</span>
+            <span>Safety Handling Fee</span><span>Rs. 0/-</span>
           </p>
           <hr />
           <p class="p_class" id="tbp">
@@ -139,7 +139,7 @@
           <button id="chkout">CHECKOUT</button>
         </div>
         <div id="discount_msg">
-          <div>Take a deep breathe</div>
+          <div>Take a deep breathe....</div>
         </div>
       </div>
     </div>
@@ -166,72 +166,25 @@
         </p>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
-      let appendNumber = 15;
-      let prependNumber = 1;
-      const swiper = new Swiper(".swiper", {
+      var swiper = new Swiper(".mySwiper", {
         slidesPerView: 4,
-        centeredSlides: true,
-        spaceBetween: 20,
-
+        spaceBetween: 10,
+        slidesPerGroup: 1,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        virtual: {
-          slides: (function () {
-            const slides = [];
-            for (var i = 0; i < 15; i++) {
-              slides.push("Slide " + (i + 1));
-            }
-            return slides;
-          })(),
-        },
       });
-
-      document
-        .querySelector(".slide-1")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          swiper.slideTo(0, 0);
-        });
-
-      document
-        .querySelector(".slide-250")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          swiper.slideTo(249, 0);
-        });
-
-      document
-        .querySelector(".slide-500")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          swiper.slideTo(499, 0);
-        });
-
-      document
-        .querySelector(".prepend-2-slides")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          swiper.virtual.prependSlide([
-            "Slide " + --prependNumber,
-            "Slide " + --prependNumber,
-          ]);
-        });
-
-      document
-        .querySelector(".append-slide")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          swiper.virtual.appendSlide("Slide " + ++appendNumber);
-        });
-
-      let per_div = document.querySelector(".swiper-slide");
-      per_div.innerText = "hii";
     </script>
   </body>
   <script src="./JS/cart.js"></script>
