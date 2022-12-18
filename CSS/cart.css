@@ -32,10 +32,12 @@ body {
   background: white;
   padding-left: 2%;
   padding-right: 2%;
-  height: 55px;
+  height: 80px;
 }
 #mg_home {
   cursor: pointer;
+  width: 200px;
+  height: 80px;
 }
 #need_help {
   cursor: pointer;
