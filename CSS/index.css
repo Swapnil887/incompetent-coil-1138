@@ -91,7 +91,7 @@ margin: 5px;
   height: 98%;
 }
 
-.Quick_Order>button{
+.Quick_Order button{
 font-size:20px ;
 color: white;
 height: 80%;
@@ -100,6 +100,7 @@ padding: 5px 30px;
 border-radius: 4px;
 background-color: #ff6f61;
 border: #ff6f61;
+cursor: pointer;
 }
 
 .Mid_pic{
@@ -214,6 +215,10 @@ border: #ff6f61;
     border: #ff6f61;
     margin-left: 0px;
   }
+  .btn a{
+    text-decoration: none;
+    color: white;
+  }
 
   #bottom_second{
 background-color: #fffcf8;
@@ -238,7 +243,7 @@ background-color: #fffcf8;
     color: gray;
   }
 
-  .sign_up>button{
+  .bottom-boxes>.sign_up button{
     font-size:15px ;
     color: white;
     height: 40px;
@@ -248,6 +253,10 @@ background-color: #fffcf8;
     background-color: #ff6f61;
     border: #ff6f61;
     margin-left: 0px;
+  }
+  .bottom-boxes>.sign_up a{
+    text-decoration: none;
+    color: white;
   }
   .bottom-boxes img{
     width: 100%;
