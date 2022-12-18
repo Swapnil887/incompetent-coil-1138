@@ -14,84 +14,23 @@
 
 <body>
     <div class="container">
-        <div class="filter_menu">
-            <!-- filter menu code-->
-            <div>
-                <h3>PRODUCTS</h3>
-                <input type="text" placeholder="Search By Price">
-            </div>
-
-            <div class="categories">
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>230</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>250</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>130</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>230</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>250</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>130</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>230</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>250</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>130</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>530</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>530</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>530</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>530</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>530</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>530</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>530</p>
-                </div>
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <p>530</p>
-                </div>
-            </div>
-        </div>
+       <div class="filter_menu">
+        <select name="" id="filter_region">
+            <option value="">Filter By  Products</option>
+            <option value="100.00">100</option>
+            <option value="200.00">200</option>
+            <option value="355.00">355</option>
+            <option value="400.00">400</option>
+            <option value="500.00">500</option>
+            <option value="600.00">600</option>
+        </select>
+        <br>
+        <select id="sort_population" onchange="sort_pop()">
+            <option value="">Sort By Price</option>
+            <option value="asc">ASC</option>
+            <option value="desc">DESC</option>
+          </select>
+       </div>
         <div id="all_products">
             <!-- product Cards code -->
         </div>
