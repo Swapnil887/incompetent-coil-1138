@@ -199,3 +199,15 @@ body {
   width: 100px;
   align-items: center;
 }
+#discount_msg {
+  width: 100%;
+  padding: 20px;
+  margin-right: -100px;
+  margin-bottom: 10px;
+}
+
+#discount_msg div {
+  font-size: x-large;
+  font-weight: bold;
+  font-family: cursive;
+}
