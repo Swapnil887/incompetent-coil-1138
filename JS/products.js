@@ -4,7 +4,7 @@ let all_products = document.querySelector("#all_products");
 let url = "https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products";
 let arr = [];
 
-async function getData() {
+async function getData(){
   try {
     let res = await fetch(url);
     let data = await res.json();
@@ -29,28 +29,88 @@ function displayCards(apidata) {
     let image = document.createElement("img");
     image.src = el.avatar;
     let product_name = document.createElement("h4");
-    product_name.textContent = el.name.substring(0, 50);
+    product_name.textContent = el.name.substring(0, 30)+ "...";
     let description = document.createElement("p");
-    description.textContent = el.description.substring(0, 30);
+    description.textContent = el.description.substring(0, 30) + "...";
     let price = document.createElement("h3");
     price.textContent = `₹${el.price}`
-    let capital = document.createElement("p");
-    capital.textContent = el.id;
-    let addToCart = document.createElement("h3");
-    addToCart.innerText = el.add;
+    let btn = document.createElement("button");
+    btn.innerText = "ADD";
+    btn.addEventListener("click",function(){
+      var obj ={};
+      obj.name = el.name;
+      obj.description = el.description;
+      obj.avatar = el.avatar;
+      obj.price = el.price;
+      add_Cart_Data(obj);
+    })
     div1.append(image)
-    div2.append(product_name, description, price);
+    div2.append(product_name, description, price,btn);
     div.append(div1, div2);
     all_products.append(div);
   })
 }
 
+async function add_Cart_Data(obj){
+  var x = await fetch(`https://6398c52b29930e2bb3c190fa.mockapi.io/sw/cart`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"}
+    ,body:JSON.stringify(obj)
+  })
+}
+
+
+// let arr=[];
+// async function getData(){
+//   let fetchData = await fetch("https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products");
+//   let data = await fetchData.json();
+//   arr = data;
+//   renderCard(data);
+// }
+// getData();
+
+// let main = document.querySelector(".main");
+// function renderCard(cardsData){
+//   main.innerHTML = `
+//   ${cardsData.map((item)=>{
+//     let imageURL = `${item.avatar}`;
+//         let name = `${item.name.substring(0,25)  + "..."}`;
+//         let description = `${item.description.substring(0,25)  + "..."}`;
+//         let id=`${item.id}`;
+//         let price=`${item.price}`
+        
+//         return getCardData(imageURL,name,description,id,price);
+//   })
+// .join("")}
+//   `;  
+// }
+
+
+// function getCardData(imageURL,name,description,id,price){
+//   main.innerHTML = ""; `
+//   <div class="show_products">
+//   <div> <img src=${imageURL} alt="img"></div>
+//   <h3>${name}</h3>
+//   <p>${description}</p>
+//      <h4>₹ ${price}</h4>
+//      <button class="mdlt" data-id=${id} >ADD</button>
+//      </div> 
+
+//   `
+//   let btn = document.querySelectorAll(".mdlt");
+//         btn.addEventListener("click",function(){
+//           alert("hello");
+// });
+// }
+
+
+
 // filter the cards based on region
-document.getElementById("filter_region").addEventListener("change", function () {
+document.getElementById("filter_region").addEventListener("change", function (){
   if (filter_region.value == "") return displayCards(arr);
   else {
     displayCards(arr.filter((element) => {
-      return element.region == filter_region.value;
+      return element.price >=250 && element.price<=800 == filter_region.value;
     }))
   }
 })
@@ -61,11 +121,11 @@ function sort_pop() {
   let select = document.getElementById("sort_population").value;
   console.log(select);
   if (select == "asc") {
-    arr.sort((a, b) => a.population - b.population);
+    arr.sort((a, b) => a.price - b.price);
     displayCards(arr);
   }
   if (select == "desc") {
-    arr.sort((a, b) => b.population - a.population);
+    arr.sort((a, b) => b.price - a.price);
     displayCards(arr);
   }
 
