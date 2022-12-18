@@ -15,7 +15,7 @@ let image = ["images/img1.png", "images/img2.png", "images/img3.png", "images/im
 
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 5,
-      spaceBetween: 1,
+      spaceBetween: 2,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -39,11 +39,11 @@ let image = ["images/img1.png", "images/img2.png", "images/img3.png", "images/im
     function products_data(imgUrl,name,desc,price){
       return `
       <div id="pro_cards">
-      <div class="pro_images"><img class="images_of" src="${imgUrl}" alt=""></div>
+      <div class="pro_images"> <a href="./products.html"><img class="images_of" src="${imgUrl}" alt=""></a> </div>
         <div class="pro_desc">
-            <div class="pro_name">${name}</div>
+            <div class="pro_name"><strong>${name}</strong></div>
             <div class="description">${desc}</div>
-            <div class="pro_price">&#8377;${price}</div>
+            <div class="pro_price"><strong>&#8377;${price}</strong></div>
         </div>
         </div> 
       `
