@@ -13,19 +13,79 @@
 </head>
 
 <body>
+
+    <!-- Navbar -->
+    <div id="navBar">
+        <div class="image"><img src="CSS/1671375586096.png"></div>
+        <div id="left_section">
+            <div class="left">
+                <h3>MEDICINES</h3>
+            </div>
+            <div class="left">
+                <h3>LAB TEST</h3>
+            </div>
+            <div class="left">
+                <h3>CONSULT DOCTORS</h3>
+            </div>
+            <div class="left">
+                <h3>COVID-19</h3>
+            </div>
+            <div class="left">
+                <h3>AYURVEDA</h3>
+            </div>
+            <div class="left">
+                <h3>CARE PLAN</h3>
+            </div>
+        </div>
+        <div id="right_section">
+            <div class="right">Swapnil <div class="unicode">&#9786;</div></div>
+            <div class="right">Offers</div>
+            <div class="right">&#128722;</div>
+            <div class="right">Need Help?</div>
+        </div>
+    </div>
+    <hr>
+    <div id="second_navBar">
+        <div id="second">
+            <select id="cities">
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Pune">Pune</option>
+                <option value="Noida">Noida</option>
+                <option value="Gurgoan">Gurgoan</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Ahemdabad">Ahemdabad</option>
+                <Option value="Mysore">Mysore</Option>
+                <option value="Jaipure">Jaipur</option>
+                <option value="Faridabad">Faridabad</option>
+                <option value="Ghaziabad">Ghaziabad</option>
+                <option value="Gandhinagar">Gandhinagar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Kolkata">Kolkata</option>
+            </select>
+            <input id="search" oninput="search()" type="text" placeholder="Search for Medicines and Health Products">
+            <br>
+            <div class="Quick_Order"> &#9889; QUICK BUY! Get 25% off on medicines* </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Navbar end -->
     <div class="container">
        <div class="filter_menu">
+        <h3>FILTERS</h3>
         <select name="" id="filter_region">
-            <option value="">Filter By  Products</option>
-            <option value="100.00">100</option>
-            <option value="200.00">200</option>
-            <option value="355.00">355</option>
-            <option value="400.00">400</option>
-            <option value="500.00">500</option>
-            <option value="600.00">600</option>
+            <option  value="">Filter By Products</option>
+            <option  value="215.00">₹215</option>
+            <option  value="355.00">₹355</option>
+            <option  value="523.00">₹523</option>
+            <option  value="999.00">₹999</option>
+            <option  value="1298.00">₹1298</option>
+            <option  value="2649.00">₹2649</option>
         </select>
         <br>
-        <select id="sort_population" onchange="sort_pop()">
+        <select id="sort_price" onchange="sort_pop()">
             <option value="">Sort By Price</option>
             <option value="asc">ASC</option>
             <option value="desc">DESC</option>

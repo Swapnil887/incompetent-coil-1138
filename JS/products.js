@@ -29,9 +29,9 @@ function displayCards(apidata) {
     let image = document.createElement("img");
     image.src = el.avatar;
     let product_name = document.createElement("h4");
-    product_name.textContent = el.name.substring(0, 30)+ "...";
+    product_name.textContent = el.name.substring(0, 15)+ "...";
     let description = document.createElement("p");
-    description.textContent = el.description.substring(0, 30) + "...";
+    description.textContent = el.description.substring(0, 15) + "...";
     let price = document.createElement("h3");
     price.textContent = `₹${el.price}`
     let btn = document.createElement("button");
@@ -110,7 +110,7 @@ document.getElementById("filter_region").addEventListener("change", function (){
   if (filter_region.value == "") return displayCards(arr);
   else {
     displayCards(arr.filter((element) => {
-      return element.price >=250 && element.price<=800 == filter_region.value;
+      return element.price === filter_region.value;
     }))
   }
 })
@@ -118,7 +118,7 @@ document.getElementById("filter_region").addEventListener("change", function (){
 // sort the cards
 
 function sort_pop() {
-  let select = document.getElementById("sort_population").value;
+  let select = document.getElementById("sort_price").value;
   console.log(select);
   if (select == "asc") {
     arr.sort((a, b) => a.price - b.price);
@@ -129,6 +129,15 @@ function sort_pop() {
     displayCards(arr);
   }
 
+}
+function search()
+{
+  let q=  document.querySelector("#search").value;
+  console.log(q)
+let newData = arr.filter(function(ele){
+    return ele.name.toLowerCase().includes(q.toLocaleLowerCase())
+})
+displayCards(newData)
 }
 
 
