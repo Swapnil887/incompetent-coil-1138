@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://i.postimg.cc/Fsp8J7LR/20221213-201414.jpg"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
+    <title>Cart</title>
+
+    <!-- here i have written style is for slider -->
+    <style>
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        border: 1px solid blue;
+        padding: 15px 0px;
+        width: 100%;
+        height: 300px;
+        margin: 20px auto;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        border: 1px solid green;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-button-next {
+        color: #fc6456;
+      }
+      .swiper-button-prev {
+        color: #fc6456;
+      }
+    </style>
+    <!-- till here for slider -->
+  </head>
+  <body>
+    <div id="payment_header">
+      <div>
+        <img id="mg_home" src="https://www.1mg.com/images/tata_1mg_logo.svg" />
+      </div>
+      <div id="search_box_outer">
+        <input
+          id="search_box"
+          type="text"
+          placeholder="Search for Medicines and Health Products"
+        />
+        <button><i class="fa fa-search"></i></button>
+      </div>
+      <div id="need_help">Need Help?</div>
+    </div>
+
+    <div id="container">
+      <div id="left">
+        <div id="cart_items"></div>
+        <div id="prdct">
+          <h4>Last Minute Buys</h4>
+
+          <div id="slider">
+            <div class="swiper">
+              <div class="swiper-wrapper"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="right">
+        <div id="promo">
+          <div>Apply Promo Code</div>
+          <div>
+            <button>
+              <img
+                src="https://www.1mg.com/images/forward-rebrand.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+        <div id="cart_total">
+          <p class="p_class">
+            <span>Item Total(MRP)</span><span id="itm_total"></span>
+          </p>
+          <p class="p_class">
+            <span>Price Discount</span><span id="ttl_dsc1"></span>
+          </p>
+          <hr />
+          <p class="p_class">
+            <span>Shipping Fee</span
+            ><span style="color: #489118">Free Delivery 🎉</span>
+          </p>
+          <p class="p_class">
+            <span>Safety Handling Fee</span><span>Rs. 29/-</span>
+          </p>
+          <hr />
+          <p class="p_class" id="tbp">
+            <span>To be paid</span><span id="ttl"></span>
+          </p>
+          <p class="p_class" id="total_g">
+            <span>Total Savings</span><span id="ttl_dsc"></span>
+          </p>
+          <button id="chkout">CHECKOUT</button>
+        </div>
+        <div id="discount_msg">
+          <div>Take a deep breathe</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="payment_footer">
+      <div>
+        <p>
+          1mg is a technology platform to facilitate transaction of business.
+          The products and services are offered for sale by the sellers. The
+          user authorizes the delivery personel to be his agent for delivery of
+          the goods. For details read <span>terms and conditions.</span>
+        </p>
+      </div>
+      <div>
+        <p>
+          *1mgCash will be credited 7 days after your complete order is
+          delivered in case of Products and in case of Lab Services 1mgCash will
+          be credited within 24 hours from the time of generation of test
+          report. 1mgCash will not be credited in case a return request is
+          initiated for the order.
+        </p>
+        <p>
+          **Coupon Discount value may change if the total order value changes.
+        </p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      let appendNumber = 15;
+      let prependNumber = 1;
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 4,
+        centeredSlides: true,
+        spaceBetween: 20,
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        virtual: {
+          slides: (function () {
+            const slides = [];
+            for (var i = 0; i < 15; i++) {
+              slides.push("Slide " + (i + 1));
+            }
+            return slides;
+          })(),
+        },
+      });
+
+      document
+        .querySelector(".slide-1")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.slideTo(0, 0);
+        });
+
+      document
+        .querySelector(".slide-250")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.slideTo(249, 0);
+        });
+
+      document
+        .querySelector(".slide-500")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.slideTo(499, 0);
+        });
+
+      document
+        .querySelector(".prepend-2-slides")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.virtual.prependSlide([
+            "Slide " + --prependNumber,
+            "Slide " + --prependNumber,
+          ]);
+        });
+
+      document
+        .querySelector(".append-slide")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          swiper.virtual.appendSlide("Slide " + ++appendNumber);
+        });
+
+      let per_div = document.querySelector(".swiper-slide");
+      per_div.innerText = "hii";
+    </script>
+  </body>
+  <script src="./JS/cart.js"></script>
+</html>
