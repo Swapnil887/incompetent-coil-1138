@@ -152,7 +152,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             </div>
             <div class="left">
               
-                <a href="a.notif.html"><h3>See Stucks</h3></a>
+                <a href="a.notif.html"><h3>See Stocks</h3></a>
             
             </div>
         </div>
@@ -166,7 +166,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         <div>Order Id</div>
         <div>Product Name</div>
         <div>Price</div>
-        <div>Stucks</div>
+        <div>Stocks</div>
       </div>
       <div id="main">
      
@@ -201,7 +201,7 @@ function table(cardData) {
         let Status=""
         let color=""
         if (item.id%7==0){
-            Status="Stuck Not Avilable"
+            Status="Out of Stock"
             color="Red"
         }
         else if(item.id%3==0||item.id%5==0){
