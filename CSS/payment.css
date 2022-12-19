@@ -293,13 +293,14 @@ justify-content: space-between;
     justify-content: flex-end;
     border-radius:3%;
     color: white;
+    /* border: 2px solid blue; */
 }
     
 #button2>button{
 background-color: rgb(238, 78, 78);
 margin-right: 10px;
     margin-bottom: 10px;
-    width: 40%;
+    width: 50%;
     height: 90%;
     overflow: hidden;
     border-radius: 3%;
@@ -307,6 +308,7 @@ margin-right: 10px;
     cursor: pointer;    
     color: white;
     border: none;
+    padding-right: 40px;
 }
 #endbox{
     margin-top: 8%;

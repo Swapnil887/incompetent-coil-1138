@@ -5,8 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://i.postimg.cc/Fsp8J7LR/20221213-201414.jpg"
+    />
 </head>
 <style>
+    *{
+        color: black;
+        text-decoration: none;
+    }
     #navBar{
     display: flex;
     /* border: 2px solid blue; */
@@ -52,7 +62,7 @@
 .image{
     height: 35px;
     width:130px;
-    background-color: #ff6f61;
+    /* background-color: #ff6f61; */
     color: #f7fafa;
     text-align: center;
     margin-top: 10px;
@@ -133,7 +143,8 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 </style>
 <body>
     <div id="navBar">
-        <div class="image"><p>INSTA Pharma<p></div>
+        
+        <div class="image"><img style=" width:100% ;padding-top: 5px"  src="images/logo_new.png" alt=""></div>
         <div id="left_section">
             <div class="left">
                 <a href="admin_panel.html"><h3> All Product</h3></a>
@@ -142,7 +153,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             </div>
             <div class="left">
              
-                <a href="admin_man.html"><h3> Mannage Product</h3></a>
+                <a href="admin_man.html"><h3> Manage Product</h3></a>
             
             </div>
             <div class="left">
@@ -152,7 +163,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             </div>
             <div class="left">
               
-                <a href="a.notif.html"><h3>See Stucks</h3></a>
+                <a href="a.notif.html"><h3>See Stocks</h3></a>
             
             </div>
         </div>
@@ -166,7 +177,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         <div>Order Id</div>
         <div>Product Name</div>
         <div>Price</div>
-        <div>Stucks</div>
+        <div>Stocks</div>
       </div>
       <div id="main">
      
@@ -201,14 +212,14 @@ function table(cardData) {
         let Status=""
         let color=""
         if (item.id%7==0){
-            Status="Stuck Not Avilable"
+            Status="stock Not Avilable"
             color="Red"
         }
         else if(item.id%3==0||item.id%5==0){
-            Status="Stuck One Left"
+            Status="stock One Left"
             color="orange"
         }  else{
-            Status="Stuck Avilable"
+            Status="stock Avilable"
             color="green"
         }
         return getAsCard( name,id,price,Status,color );

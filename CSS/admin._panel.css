@@ -7,6 +7,10 @@
   
 display: flex;
 }
+
+*{
+    color: black;
+}
 .update>div{
 height:80%;
 width:30%;
@@ -160,7 +164,7 @@ color: white;
 .image{
     height: 35px;
     width:130px;
-    background-color: #ff6f61;
+    /* background-color: #ff6f61; */
     color: #f7fafa;
     text-align: center;
     margin-top: 10px;

@@ -38,6 +38,7 @@ body {
   cursor: pointer;
   width: 200px;
   height: 80px;
+  margin-right: 50px;
 }
 #need_help {
   cursor: pointer;
@@ -213,6 +214,6 @@ body {
   font-weight: bold;
   font-family: cursive;
 }
-#prdct {
+/* #prdct {
   border: 1px solid blue;
-}
+} */

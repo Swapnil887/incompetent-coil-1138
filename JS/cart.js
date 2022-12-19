@@ -18,7 +18,7 @@ let append = (data) => {
     div1.setAttribute("class", "div_align");
 
     let name = document.createElement("h4");
-    name.innerText = el.name;
+    name.innerText = el.name.substring(0,50)+"...";
 
     let price = document.createElement("h4");
     price.innerText = `Rs. ${+el.price}.00/-`;
@@ -269,7 +269,7 @@ async function get_Cart_Data() {
 
   let payment = document.getElementById("chkout");
   payment.addEventListener("click", () => {
-    window.location.href = "payment.html";
+    window.location.href = "pay.html";
   });
 }
 get_Cart_Data();

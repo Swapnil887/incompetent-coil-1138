@@ -1,9 +1,7 @@
-
 // Write all necessery JS here
 let all_products = document.querySelector("#all_products");
 let url = "https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products";
 let arr = [];
-
 async function getData(){
   try {
     let res = await fetch(url);
@@ -15,14 +13,12 @@ async function getData(){
   }
 }
 getData();
-
 function displayCards(apidata) {
   all_products.innerHTML = " ";
   apidata.forEach((el) => {
     let div = document.createElement("div");
     let div1 = document.createElement("div");
     let div2 = document.createElement("div");
-
     div.setAttribute('id', 'parent')
     div1.setAttribute('class', 'img1')
     div2.setAttribute('class', 'details')
@@ -42,6 +38,7 @@ function displayCards(apidata) {
       obj.description = el.description;
       obj.avatar = el.avatar;
       obj.price = el.price;
+      alert(`${obj.name} is added`)
       add_Cart_Data(obj);
     })
     div1.append(image)
@@ -50,7 +47,6 @@ function displayCards(apidata) {
     all_products.append(div);
   })
 }
-
 async function add_Cart_Data(obj){
   var x = await fetch(`https://6398c52b29930e2bb3c190fa.mockapi.io/sw/cart`,{
     method:"POST",
@@ -58,8 +54,6 @@ async function add_Cart_Data(obj){
     ,body:JSON.stringify(obj)
   })
 }
-
-
 // let arr=[];
 // async function getData(){
 //   let fetchData = await fetch("https://6398c52b29930e2bb3c190fa.mockapi.io/sw/products");
@@ -68,7 +62,6 @@ async function add_Cart_Data(obj){
 //   renderCard(data);
 // }
 // getData();
-
 // let main = document.querySelector(".main");
 // function renderCard(cardsData){
 //   main.innerHTML = `
@@ -78,14 +71,11 @@ async function add_Cart_Data(obj){
 //         let description = `${item.description.substring(0,25)  + "..."}`;
 //         let id=`${item.id}`;
 //         let price=`${item.price}`
-        
 //         return getCardData(imageURL,name,description,id,price);
 //   })
 // .join("")}
-//   `;  
+//   `;
 // }
-
-
 // function getCardData(imageURL,name,description,id,price){
 //   main.innerHTML = ""; `
 //   <div class="show_products">
@@ -94,17 +84,13 @@ async function add_Cart_Data(obj){
 //   <p>${description}</p>
 //      <h4>₹ ${price}</h4>
 //      <button class="mdlt" data-id=${id} >ADD</button>
-//      </div> 
-
+//      </div>
 //   `
 //   let btn = document.querySelectorAll(".mdlt");
 //         btn.addEventListener("click",function(){
 //           alert("hello");
 // });
 // }
-
-
-
 // filter the cards based on region
 document.getElementById("filter_region").addEventListener("change", function (){
   if (filter_region.value == "") return displayCards(arr);
@@ -114,9 +100,7 @@ document.getElementById("filter_region").addEventListener("change", function (){
     }))
   }
 })
-
 // sort the cards
-
 function sort_pop() {
   let select = document.getElementById("sort_price").value;
   console.log(select);
@@ -128,7 +112,6 @@ function sort_pop() {
     arr.sort((a, b) => b.price - a.price);
     displayCards(arr);
   }
-
 }
 function search()
 {
@@ -139,5 +122,12 @@ let newData = arr.filter(function(ele){
 })
 displayCards(newData)
 }
+
+
+
+
+
+
+
 
 
